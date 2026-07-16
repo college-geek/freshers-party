@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Freshers' Party Receipt Generator</title>
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+        href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🎉 Freshers' Party 2026</h1>
+
+    <p>Receipt Generator</p>
+
+</header>
+
+<div class="container">
+
+<!-- ========================= -->
+<!-- FORM -->
+<!-- ========================= -->
+
+<div class="form-card">
+
+<h2>Create Receipt</h2>
+
+<label>Receipt ID <span>*</span></label>
+
+<input
+type="text"
+id="receiptInput"
+placeholder="FP2026-001">
+
+<label>Student Name <span>*</span></label>
+
+<input
+type="text"
+id="name"
+placeholder="Enter Student Name">
+
+<label>Registration Number <span>*</span></label>
+
+<input
+type="text"
+id="regno"
+placeholder="24CSE1025">
+
+<label>Department</label>
+
+<input
+type="text"
+id="department"
+placeholder="Computer Science">
+
+<label>Amount (₹) <span>*</span></label>
+
+<input
+type="number"
+id="amount"
+placeholder="500">
+
+<label>Payment Mode</label>
+
+<select id="paymentMode">
+
+<option value="Cash">Cash</option>
+
+<option value="UPI">UPI</option>
+
+</select>
+
+<div id="upiBox">
+
+<label>UPI Transaction ID</label>
+
+<input
+type="text"
+id="transaction"
+placeholder="Enter Transaction ID">
+
+</div>
+
+<label>Received By</label>
+
+<input
+type="text"
+id="receiver"
+placeholder="Student Council">
+
+<div class="buttons">
+
+<button id="generateBtn">
+
+<i class="fa-solid fa-receipt"></i>
+
+Generate Receipt
+
+</button>
+
+<button id="downloadBtn">
+
+<i class="fa-solid fa-download"></i>
+
+Download PNG
+
+</button>
+
+<button id="printBtn">
+
+<i class="fa-solid fa-print"></i>
+
+Print
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- RECEIPT -->
+<!-- ========================= -->
+
+<div class="receipt-wrapper">
+
+    <div class="success-badge">
+
+        <i class="fa-solid fa-check"></i>
+
+    </div>
+
+    <div class="receipt" id="receipt">
+
+<h2>
+
+Freshers' Party 2026
+
+</h2>
+
+<p class="subtitle">
+
+Payment Received Successfully
+
+</p>
+
+<hr>
+
+<div class="row">
+
+<span>Receipt ID</span>
+
+<strong id="receiptNo">
+
+-
+
+</strong>
+
+</div>
+
+<div class="row">
+
+<span>Date</span>
+
+<strong id="date">
+
+-
+
+</strong>
+
+</div>
+
+<hr>
+
+<div class="row">
+
+<span>Student Name</span>
+
+<strong id="previewName">
+
+-
+
+</strong>
+
+</div>
+
+<div class="row">
+
+<span>Registration No.</span>
+
+<strong id="previewReg">
+
+-
+
+</strong>
+
+</div>
+
+<div class="row">
+
+<span>Department</span>
+
+<strong id="previewDept">
+
+-
+
+</strong>
+
+</div>
+
+<div class="row">
+
+<span>Amount Paid</span>
+
+<strong id="previewAmount">
+
+₹0
+
+</strong>
+
+</div>
+    <div class="row">
+
+    <span>Payment Mode</span>
+
+    <strong id="previewMode">
+
+        Cash
+
+    </strong>
+
+</div>
+
+<div
+    class="row"
+    id="transactionRow">
+
+    <span>Transaction ID</span>
+
+    <strong id="previewTxn">
+
+        -
+
+    </strong>
+
+</div>
+
+<div class="row">
+
+    <span>Received By</span>
+
+    <strong id="previewReceiver">
+
+        Student Council
+
+    </strong>
+
+</div>
+
+<hr>
+
+<div class="barcode-section">
+
+    <div class="fake-barcode"></div>
+
+    <div
+        class="barcode-number"
+        id="barcodeNumber">
+
+        -
+
+    </div>
+
+</div>
+
+<div class="thankyou">
+
+    <h3>🎉 Thank You!</h3>
+
+    <p>
+
+        Your contribution has been received successfully.
+
+    </p>
+
+    <p>
+
+        We look forward to seeing you at the Freshers' Party 2026.
+
+    </p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+    <p>
+
+        © 2026 Freshers' Party Committee
+
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+    </body>
+
+</html>
